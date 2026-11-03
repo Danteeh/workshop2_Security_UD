@@ -672,15 +672,15 @@ def gen_terminal_captures():
     t9_lines = [
         "Telegram Messenger - Chat con @GeoTrackerSecurityBot",
         "================================================================================",
-        "[Bot] ¡Bienvenido al Sistema de Rastreo y Seguridad Móvil (Laboratorio UD)!",
-        "      Para registrar este dispositivo, ingrese su número con código de país.",
+        "[Bot] Bienvenido al Sistema de Rastreo y Seguridad Movil (Laboratorio UD)!",
+        "      Para registrar este dispositivo, ingrese su numero con codigo de pais.",
         "[Usuario] +57 3108892341",
-        "[Bot] Dispositivo verificado exitosamente. Token de sesión: tk_sec_9941a",
-        "      Presione el botón inferior para compartir su ubicación en tiempo real.",
-        "      [ 📍 COMPARTIR MI UBICACIÓN ACTUAL ]  <-- (Botón nativo Telegram)",
-        "[Usuario] *Ubicación enviada: Lat: 4.628031, Lon: -74.065120, Precisión: 4.2m*",
-        "[Bot] ✅ Coordenadas registradas e indexadas en la API REST.",
-        "      Geocodificación: Cra 7 # 40-53, Chapinero, Bogotá D.C.",
+        "[Bot] Dispositivo verificado exitosamente. Token de sesion: tk_sec_9941a",
+        "      Presione el boton inferior para compartir su ubicacion en tiempo real.",
+        "      [ COMPARTIR MI UBICACION ACTUAL ]  <-- (Boton nativo Telegram)",
+        "[Usuario] *Ubicacion enviada: Lat: 4.628031, Lon: -74.065120, Precision: 4.2m*",
+        "[Bot] [OK] Coordenadas registradas e indexadas en la API REST.",
+        "      Geocodificacion: Cra 7 # 40-53, Chapinero, Bogota D.C.",
         "      Estado Geofence: 'DENTRO DE ZONA SEGURA (Campus UD)'",
         "      Velocidad calculada: 0.0 km/h [NORMAL - ML Score: 0.02]"
     ]

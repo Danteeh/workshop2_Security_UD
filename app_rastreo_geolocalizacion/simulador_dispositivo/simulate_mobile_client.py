@@ -74,7 +74,7 @@ def run_simulation():
                 
                 if alerts:
                     for al in alerts:
-                        print(f"      [!] ⚠️ ALERTA DISPARADA: [{al['type']}] {al['description']}")
+                        print(f"      [!] ALERTA DISPARADA: [{al['type']}] {al['description']}")
                 else:
                     print(f"      -> [OK] Telemetría dentro de parámetros seguros.")
             else:
