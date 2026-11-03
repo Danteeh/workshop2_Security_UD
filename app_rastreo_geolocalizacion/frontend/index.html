@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoTracker Safe - Plataforma de Monitoreo y Geofencing Ético</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Barra Superior -->
+        <header class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>GeoTracker <strong>Safe v2.0</strong></span>
+                <span class="badge badge-ud">Lab Seguridad Informática UD</span>
+            </div>
+            <div class="nav-metrics">
+                <div class="metric-card">
+                    <span class="metric-label">Dispositivos Activos</span>
+                    <span class="metric-val" id="count-devices">1</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">En Zona Segura</span>
+                    <span class="metric-val text-success" id="count-inside">1</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Alertas Activas</span>
+                    <span class="metric-val text-danger" id="count-alerts">0</span>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="btn-refresh"><i class="fa-solid fa-arrows-rotate"></i> Actualizar</button>
+                <button class="btn btn-primary" id="btn-register-modal"><i class="fa-solid fa-plus"></i> Vincular Número</button>
+            </div>
+        </header>
+
+        <!-- Contenedor Principal: Sidebar + Mapa -->
+        <div class="main-layout">
+            <!-- Sidebar Lateral -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3><i class="fa-solid fa-mobile-screen"></i> Dispositivos Vinculados</h3>
+                    <div id="device-list" class="device-list">
+                        <!-- Dispositivos cargados dinámicamente -->
+                        <div class="loading-spinner"><i class="fa-solid fa-spinner fa-spin"></i> Cargando telemetría...</div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3><i class="fa-solid fa-draw-polygon"></i> Geocercas Definidas</h3>
+                    <div class="geofence-card">
+                        <div class="fence-header">
+                            <strong>Campus UD Sede Calle 40</strong>
+                            <span class="badge badge-success">Activa</span>
+                        </div>
+                        <p class="fence-meta">Radio: 500 metros | Lat: 4.6280, Lon: -74.0651</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3><i class="fa-solid fa-triangle-exclamation"></i> Registro de Alertas Recientes</h3>
+                    <div id="alerts-list" class="alerts-list">
+                        <p class="empty-state">No se registran violaciones de seguridad.</p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Área del Mapa Leaflet -->
+            <main class="map-wrapper">
+                <div id="map"></div>
+                <div class="map-overlay-card" id="selected-telemetry">
+                    <h4><i class="fa-solid fa-location-crosshairs"></i> Telemetría en Tiempo Real</h4>
+                    <div id="telemetry-content">
+                        <p>Seleccione un dispositivo en la lista para ver sus métricas cinemáticas e histórico de ruta.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal Registro -->
+    <div class="modal-overlay" id="register-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Vincular Dispositivo por Número Telefónico</h3>
+                <button class="btn-close" id="btn-close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="legal-notice">
+                    <i class="fa-solid fa-scale-balanced"></i> <strong>Aviso Legal y Ético:</strong> Este sistema opera bajo consentimiento explícito conforme a la Ley 1581 de 2012 (Habeas Data) y normativas de seguridad informática académica. Queda prohibido el rastreo sin autorización.
+                </p>
+                <div class="form-group">
+                    <label>Número Telefónico (con código de país):</label>
+                    <input type="text" id="input-phone" placeholder="+57 310 1234567" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Nombre o Alias del Dispositivo:</label>
+                    <input type="text" id="input-name" placeholder="Ej. Móvil Personal / Prueba 02" class="form-control">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="check-consent" checked>
+                    <label for="check-consent">El usuario ha otorgado consentimiento explícito y autoriza la captura de telemetría GPS con fines legítimos.</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="btn-cancel-modal">Cancelar</button>
+                <button class="btn btn-primary" id="btn-submit-register">Confirmar y Generar Token</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts Leaflet y Aplicación -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>

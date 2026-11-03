@@ -1,0 +1,370 @@
+/* Estilos Modernos - GeoTracker Safe (Tema Ciberseguridad) */
+:root {
+    --bg-dark: #0f172a;
+    --bg-sidebar: #1e293b;
+    --bg-card: #334155;
+    --border-color: #475569;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    height: 64px;
+    background-color: var(--bg-sidebar);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.15rem;
+}
+
+.logo i {
+    color: var(--primary);
+    font-size: 1.4rem;
+}
+
+.badge-ud {
+    background-color: #4338ca;
+    color: #e0e7ff;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-left: 8px;
+}
+
+.nav-metrics {
+    display: flex;
+    gap: 20px;
+}
+
+.metric-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metric-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.metric-val {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.text-success { color: var(--success); }
+.text-danger { color: var(--danger); }
+.text-warning { color: var(--warning); }
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+.btn-outline:hover {
+    background-color: var(--bg-card);
+}
+
+/* Layout */
+.main-layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 380px;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-section h3 {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.device-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.device-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.device-card:hover, .device-card.active {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.device-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.device-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.badge {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+.badge-success { background-color: rgba(16, 185, 129, 0.2); color: var(--success); }
+.badge-danger { background-color: rgba(239, 68, 68, 0.2); color: var(--danger); }
+
+.device-details {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Geofence & Alert Cards */
+.geofence-card {
+    background-color: var(--bg-dark);
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 12px;
+}
+.fence-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+}
+.fence-meta {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.alerts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.alert-item {
+    background-color: rgba(239, 68, 68, 0.15);
+    border-left: 3px solid var(--danger);
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+}
+.alert-time {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+}
+
+.empty-state {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Map Wrapper */
+.map-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.map-overlay-card {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    background-color: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+    width: 340px;
+    z-index: 1000;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.map-overlay-card h4 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#telemetry-content p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background-color: var(--bg-sidebar);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    width: 480px;
+    max-width: 90%;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.6);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.legal-notice {
+    font-size: 0.78rem;
+    background-color: rgba(37, 99, 235, 0.15);
+    border-left: 3px solid var(--primary);
+    padding: 10px;
+    border-radius: 4px;
+    line-height: 1.4;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.82rem;
+    margin-bottom: 6px;
+    color: var(--text-muted);
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-main);
+    font-size: 0.88rem;
+}
+
+.form-check {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 14px 20px;
+    border-top: 1px solid var(--border-color);
+}

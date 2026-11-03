@@ -1,0 +1,30 @@
+================================================================================
+REGISTRO DE INTEGRIDAD CRIPTOGRÁFICA (SHA-256) - EVIDENCIAS DE RED
+Taller No. 2: Mecanismos de Seguridad para Redes IEEE 802.3 con Servidores TCP/IP
+Universidad Distrital Francisco José de Caldas - 2026
+================================================================================
+
+Archivo: caso1_syn_flood.pcap
+Tamaño:  16128 bytes
+SHA-256: 8d0e5fda4547e9cad8608aaff3412664d8a4d8e90fbb102fa4542ca2e3a070ea
+--------------------------------------------------------------------------------
+Archivo: caso2_dns_tunneling.pcap
+Tamaño:  2594 bytes
+SHA-256: bdddff6608a856ed593186747f5e36ed5f69f2d2457b1ad8ee88f13a112ec6f0
+--------------------------------------------------------------------------------
+Archivo: caso5_tcp_resets.pcap
+Tamaño:  469 bytes
+SHA-256: 083f4940a9a73111fe20f58628fa7febdf971f6ec8a0a88b6f9240e858eef082
+--------------------------------------------------------------------------------
+Archivo: caso6_udp_amplification.pcap
+Tamaño:  14224 bytes
+SHA-256: 205127ca90fff94b2ee7f3833a4595c68581fe2abb0232c3fbcf70af222db1bd
+--------------------------------------------------------------------------------
+Archivo: caso7_icmp_tunnel.pcap
+Tamaño:  6234 bytes
+SHA-256: e0512a71b74db26dabcf514d786c31ff825973535435cc0985bf43c78cf2ae98
+--------------------------------------------------------------------------------
+Archivo: caso8_port_scan.pcap
+Tamaño:  2194 bytes
+SHA-256: 4e8907bad8c3012326e6c8a9746d5f65f788225b6a1989d6ea404c8d7ac31545
+--------------------------------------------------------------------------------
